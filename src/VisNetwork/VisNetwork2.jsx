@@ -90,6 +90,8 @@ const VisNetwork2 = ({ data }) => {
       <div>
         <div>No Data</div>
         <div>Jenkins 테스트</div>
+        <div>Jenkins 테스트</div>
+        <div>Jenkins 테스트</div>
       </div>
     );
   }
