@@ -81,7 +81,6 @@ const VisNetwork2 = ({ data }) => {
 
   useEffect(() => {
     if (data) {
-      console.log("test");
       network.current = new Network(container.current, data, basedOptions);
     }
   }, [data]);
