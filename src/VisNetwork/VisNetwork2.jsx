@@ -92,6 +92,9 @@ const VisNetwork2 = ({ data }) => {
         <div>Jenkins 테스트</div>
         <div>Jenkins 테스트</div>
         <div>Jenkins 테스트</div>
+        <div>커밋테스트</div>
+        <div>커밋테스트</div>
+        <div>커밋테스트</div>
       </div>
     );
   }
