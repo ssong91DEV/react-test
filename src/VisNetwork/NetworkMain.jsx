@@ -25,10 +25,10 @@ const NetworkMain = () => {
         },
       }).then((r) => r.data);
 
-      setNetworkData({
-        nodes: result.networkData.nodes,
-        edges: result.networkData.edges,
-      });
+      // setNetworkData({
+      //   nodes: result.networkData.nodes,
+      //   edges: result.networkData.edges,
+      // });
     };
 
     getGraph_gephi();

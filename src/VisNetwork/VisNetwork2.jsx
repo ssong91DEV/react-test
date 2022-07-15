@@ -86,7 +86,12 @@ const VisNetwork2 = ({ data }) => {
   }, [data]);
 
   if (!data) {
-    return <div>no data</div>;
+    return (
+      <div>
+        <div>No Data</div>
+        <div>Jenkins 테스트</div>
+      </div>
+    );
   }
 
   return <div ref={container} />;
