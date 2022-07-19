@@ -90,6 +90,7 @@ const VisNetwork2 = ({ data }) => {
       <div>
         <div>No Data</div>
         <div>2022년7월19일테스트13131313</div>
+        <div>2022년7월19일테스트14</div>
       </div>
     );
   }
