@@ -89,7 +89,6 @@ const VisNetwork2 = ({ data }) => {
     return (
       <div>
         <div>No Data</div>
-        <div>다시 되나?</div>
       </div>
     );
   }
