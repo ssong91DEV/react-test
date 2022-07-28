@@ -24,6 +24,24 @@ pipeline {
                         changelog: true
                     }
                 }
+
+                stage('build gradle') {
+                    steps {
+                        // gralew이 있어야됨. git clone해서 project를 가져옴.
+                        sh 'chmod +x gradlew'
+                        sh  './gradlew clean build'
+                        sh 'ls -al ./build'
+                    }
+                    post {
+                        success {
+                            echo 'gradle build success'
+                        }
+
+                        failure {
+                            echo 'gradle build failed'
+                        }
+                    }
+                }
                 
                 stage("Dockerizing") {
                     steps {
