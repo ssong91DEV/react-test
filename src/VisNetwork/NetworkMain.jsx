@@ -31,7 +31,7 @@ const NetworkMain = () => {
       // });
     };
 
-    getGraph_gephi();
+    // getGraph_gephi();
   }, []);
 
   return <VisNetwork2 data={networkKData} />;

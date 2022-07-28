@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Network } from "vis-network/peer/esm/vis-network";
 
 export const basedOptions = {
@@ -78,6 +78,14 @@ export const basedOptions = {
 const VisNetwork2 = ({ data }) => {
   const network = useRef(null);
   const container = useRef(null);
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -91,7 +99,7 @@ const VisNetwork2 = ({ data }) => {
         <div>No Data</div>
         <div>20220727 테스트1</div>
         <div>
-          {new Date().toLocaleDateString} {new Date().toLocaleTimeString}
+          {time.toLocaleDateString()} {time.toLocaleTimeString()}
         </div>
       </div>
     );
