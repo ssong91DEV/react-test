@@ -97,7 +97,7 @@ const VisNetwork2 = ({ data }) => {
     return (
       <div>
         <div>No Data</div>
-        <div>20220728 테스트1</div>
+        <div>20220728 테스트2</div>
         <div>
           {time.toLocaleDateString()} {time.toLocaleTimeString()}
         </div>
