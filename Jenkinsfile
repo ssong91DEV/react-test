@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         GIT_URL = "https://github.com/ssong91DEV/react-test.git"
+        imagename = "react-nginx"
+        dockerImage = ''
     }
 
     tools {
@@ -27,7 +29,9 @@ pipeline {
 
                 stage("Test") {
                     steps {
-                        script "node --version"
+                        script {
+                            dockerImage = docker.build imagename
+                        }
                     }
                 }
 
