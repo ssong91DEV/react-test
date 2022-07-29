@@ -1,7 +1,6 @@
 pipeline {
     agent any
     environment {
-        imagename = "react-engix-docker3",
         GIT_URL = "https://github.com/ssong91DEV/react-test.git"
     }
 
