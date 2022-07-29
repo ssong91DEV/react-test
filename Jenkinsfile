@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'node:16.13.2'}
-    }
-
+    agent any
     environment {
         GIT_URL = "https://github.com/ssong91DEV/react-test.git"
         imagename = "react-nginx"
@@ -23,6 +20,7 @@ pipeline {
             }
         }
         stage("TEST") {
+            agent { docker 'node:16.13.2'}
             steps {
                 sh 'node --version'
             }
