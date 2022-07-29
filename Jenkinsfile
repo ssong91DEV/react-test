@@ -25,6 +25,12 @@ pipeline {
                     }
                 }
 
+                stage("Test") {
+                    steps {
+                        sh "node --version"
+                    }
+                }
+
                 // stage('build gradle') {
                 //     steps {
                 //         // gralew이 있어야됨. git clone해서 project를 가져옴.
@@ -43,36 +49,36 @@ pipeline {
                 //     }
                 // }
                 
-                stage("Dockerizing") {
-                    steps {
-                        sh 'docker build -f Dockerfile -t react-nginx .'
-                    }
-                    post {
-                        success {
-                            echo "Dockerizing success!!!!!!!!!!!"
-                        }
+                // stage("Dockerizing") {
+                //     steps {
+                //         sh 'docker build -f Dockerfile -t react-nginx .'
+                //     }
+                //     post {
+                //         success {
+                //             echo "Dockerizing success!!!!!!!!!!!"
+                //         }
                         
-                        failure {
-                            echo "Dockerizing failed!!!!!!!!!!!!!!"
-                        }
-                    }
-                }
+                //         failure {
+                //             echo "Dockerizing failed!!!!!!!!!!!!!!"
+                //         }
+                //     }
+                // }
                 
-                stage("Deploy") {
-                    steps {
-                        sh "docker run -it -p 80:80 -d --name react-nginx-docker react-nginx"
-                    }
+                // stage("Deploy") {
+                //     steps {
+                //         sh "docker run -it -p 80:80 -d --name react-nginx-docker react-nginx"
+                //     }
                     
-                    post {
-                        success {
-                            echo "Deploy success!!!!!!!!!!!"
-                        }
+                //     post {
+                //         success {
+                //             echo "Deploy success!!!!!!!!!!!"
+                //         }
                         
-                        failure {
-                            echo "Deploy failed!!!!!!!!!!!!!!"
-                        }
-                    }
-                }
+                //         failure {
+                //             echo "Deploy failed!!!!!!!!!!!!!!"
+                //         }
+                //     }
+                // }
             }
         }
     }
