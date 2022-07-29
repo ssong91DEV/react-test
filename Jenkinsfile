@@ -13,30 +13,20 @@ pipeline {
         nodejs "NodeJS 16.13.2"
     }
 
-    
     stages {
-            stages {
+        stage('Git Pull') {
+            steps {
+                git url: "https://github.com/ssong91DEV/react-test.git",
+                branch: "main",
+                poll: true,
+                changelog: true
+            }
+        }
         stage("TEST") {
             steps {
                 sh 'node --version'
             }
         }
-    }
-        stage("Build and Deploy") {
-            agent {
-                node {
-                    label 'react-project'
-                }
-            }
-            stages {
-                stage('Git Pull') {
-                    steps {
-                        git url: "https://github.com/ssong91DEV/react-test.git",
-                        branch: "main",
-                        poll: true,
-                        changelog: true
-                    }
-                }
 
                 // stage("Docker Image Build") {
                 //     steps {
@@ -52,7 +42,5 @@ pipeline {
                 //     }
                 // }
 
-            }
-        }
     }
 }
